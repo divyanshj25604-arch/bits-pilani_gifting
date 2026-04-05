@@ -1,0 +1,111 @@
+/* ─── Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap');
+
+/* ─── CSS Variables ─── */
+:root {
+  /* Light theme */
+  --bg: #FAF7F2;
+  --bg-surface3: #FAF7F2;
+  --text-primary: #1C1712;
+  --text-muted: #8C7B6E;
+  --text-warm-gray: #8C7B6E;
+  --accent: #C1654A;
+  --border: #E8E0D8;
+  --card-bg: #FAF7F2;
+  --card-selected-bg: #C1654A;
+  --card-selected-text: #ffffff;
+  --input-underline: #E8E0D8;
+  --dot-pulse: #C1654A;
+  --wordmark-color: #1C1712;
+  --rule-color: #C1654A;
+}
+
+[data-theme="dark"] {
+  --bg: #1C1917;
+  --bg-surface3: #171412;
+  --text-primary: #F5EDE0;
+  --text-muted: #A8998A;
+  --text-warm-gray: #A8998A;
+  --accent: #C1654A;
+  --border: #3D3530;
+  --card-bg: #2A2420;
+  --card-selected-bg: #C1654A;
+  --card-selected-text: #ffffff;
+  --input-underline: #3D3530;
+  --dot-pulse: #C1654A;
+  --wordmark-color: #FAF7F2;
+  --rule-color: #C1654A;
+}
+
+/* ─── Reset & Base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.2s ease, color 0.2s ease;
+  overflow-x: hidden;
+}
+
+/* ─── Typography Helpers ─── */
+.font-georgia {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+.font-arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ─── Animations ─── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50%       { opacity: 1;   transform: scale(1); }
+}
+
+@keyframes buttonRise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wordmarkShrink {
+  from { font-size: 44px; opacity: 1; }
+  to   { font-size: 14px; opacity: 0.7; }
+}
+
+@keyframes chevronPulse {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50%       { opacity: 0.6; transform: translateY(3px); }
+}
+
+/* ─── App wrapper ─── */
+#root {
+  display: flex;
+  flex-direction: column;
+}
