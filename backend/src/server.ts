@@ -20,9 +20,11 @@ app.get("/health", (_req, res) => {
 // Routes
 app.use("/api/gift", giftRouter);
 
-// Start
-app.listen(PORT, () => {
-  console.log(`[Thoughtly] Server running on http://localhost:${PORT}`);
-});
+// Start (only when running locally, not on Vercel serverless)
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`[Thoughtly] Server running on http://localhost:${PORT}`);
+  });
+}
 
 export default app;
